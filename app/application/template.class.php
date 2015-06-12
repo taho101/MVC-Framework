@@ -29,11 +29,26 @@ class template{
                 }
         }
 
-        // Load variables
+        // load variables
         foreach ($this->vars as $key => $value){
                 $$key = $value;
         }
 
+        include_once($path);
+    }
+    
+    public function partial($name){
+        $path = DOCUMENT_ROOT . '/app/views/partials/'.$name.'.php';
+        
+        if (file_exists($path) == false){
+            return false;
+        }
+        
+        //load variables
+        foreach ($this->vars as $key => $value){
+                $$key = $value;
+        }
+        
         include_once($path);
     }
 }

@@ -37,11 +37,21 @@ class template{
         include_once($path);
     }
     
-    public function partial($name){
+    public function partial($name, $parameters = null){
         $path = DOCUMENT_ROOT . '/app/views/partials/'.$name.'.php';
         
         if (file_exists($path) == false){
             return false;
+        }
+        
+        if($parameters != null){
+            if(is_array($parameters)){
+                foreach ($parameters as $key => $value){
+                    $$key = $value;
+                }
+            }else{
+                throw new Exception('Invalid parameters provided to partial view!');
+            }
         }
         
         //load variables

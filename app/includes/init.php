@@ -1,16 +1,16 @@
 <?php
 
 //include base controller
-include_once(DOCUMENT_ROOT . '/app/application/controller_base.class.php');
+include_once(DOCUMENT_ROOT . '/app/core/controller_base.class.php');
 
 //include registry
-include_once(DOCUMENT_ROOT . '/app/application/registry.class.php');
+include_once(DOCUMENT_ROOT . '/app/core/registry.class.php');
 
 //include router
-include_once(DOCUMENT_ROOT . '/app/application/router.class.php');
+include_once(DOCUMENT_ROOT . '/app/core/router.class.php');
 
 //include base template
-include_once(DOCUMENT_ROOT . '/app/application/template.class.php');
+include_once(DOCUMENT_ROOT . '/app/core/template.class.php');
 
 //register autoload
 function __autoload($class_name) {
